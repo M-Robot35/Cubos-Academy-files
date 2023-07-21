@@ -1,0 +1,11 @@
+{
+  "name": "exercicio_01",
+  "version": "1.0.0",
+  "description": "Exercicio para entender a últilização do Git",
+  "main": "hello-world.js",
+  "scripts": {
+    "test": "hello-world.js"
+  },
+  "author": "Thiago Teles de Souza",
+  "license": "ISC"
+}
