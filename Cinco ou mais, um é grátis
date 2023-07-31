@@ -1,0 +1,39 @@
+hackerrank exercicio 
+// ===========================================================
+// Cinco ou mais, um é grátis
+// ===========================================================
+
+function solucao(precos) {
+    //seu codigo aqui
+    
+    if(precos.length >= 5){
+        const menorValor = Math.min(...precos);
+        
+        const valorTotal = precos.reduce((accumulator, currentValue)=>accumulator + currentValue,
+        0);
+        
+        const valorPago = (valorTotal - menorValor);
+        console.log(valorPago)  
+        
+       }else{
+            const valorTotal = precos.reduce((accumulator, currentValue)=>accumulator + currentValue,
+        0);
+           console.log(valorTotal)
+       }
+    
+}
+
+function processData(input) {
+	solucao(input.trim().split(" ").filter(x => x).map(x => parseInt(x, 10)));
+}
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
