@@ -1,0 +1,41 @@
+hackerrank exercicio 
+// ===========================================================
+// Brasil com "P"
+// ===========================================================
+
+function solucao(primeiraLetra, segundaLetra, palavras) {
+	//seu codigo aqui    
+
+    let selecionadas = []
+
+    for (let palavra of palavras){
+        if(palavra.startsWith(primeiraLetra + segundaLetra)){
+            selecionadas.push(palavra)
+        }
+    }
+    if(selecionadas.length > 0 ){
+        for(let select of selecionadas){
+            console.log(select)
+        }
+    }else{
+        console.log("NENHUMA")
+    }
+    
+
+}
+
+function processData(input) {
+    const { primeiraLetra, segundaLetra, palavras } = JSON.parse(input);
+    solucao(primeiraLetra, segundaLetra, palavras);
+} 
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
