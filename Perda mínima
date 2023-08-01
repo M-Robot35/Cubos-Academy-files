@@ -1,0 +1,45 @@
+hackerrank exercicio 
+// ===========================================================
+// Perda mínima
+// ===========================================================
+
+
+function solucao(precos) {
+  // seu codigo aqui
+    let percaMinima = 0;     
+    
+    for(let i = 0; i < precos.length ; i++){
+        for(let j = i + 1; j < precos.length ; j++){
+            const compra = precos[i]
+            const venda = precos[j]
+            const conta = ( compra - venda )
+            
+            if(compra > venda){
+                if(percaMinima == 0){
+                    percaMinima = conta
+                    valorDeCompra = compra
+                    
+                }else if( conta < percaMinima){
+                    percaMinima = conta
+                }
+            }          
+        }
+    }
+    console.log(percaMinima)
+}
+
+function processData(input) {
+    const precos = input.split(" ").map(x => parseInt(x));
+  	solucao(precos);
+}
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
