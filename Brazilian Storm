@@ -1,0 +1,32 @@
+hackerrank exercicio 
+// ===========================================================
+// Brazilian Storm
+// ===========================================================
+
+function solucao(notas) {
+	//seu codigo aqui
+    const tamanhoDoArray = notas.length - 2
+    const maiorNota = Math.max(...notas)
+    const menorNota = Math.min(...notas)
+
+    const soma = notas.reduce((acumulador, valorAtual)=> acumulador + valorAtual, 0)   
+    const resultado = (soma - (maiorNota + menorNota)) / tamanhoDoArray
+
+    console.log(resultado)   
+}
+
+function processData(input) {
+    solucao(input.trim().split(" ").filter(x => x).map(x => parseInt(x, 10)));
+} 
+
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
