@@ -3,11 +3,9 @@ hackerrank exercicio
 // Abecedário
 // ===========================================================
 
-
 function solucao(letra, palavras) {
 	//seu codigo aqui
-    let perdeu = 0;
-    
+    let perdeu = 0;    
     for(let palavra of palavras){
         if(!palavra.startsWith(letra)){
             perdeu++
