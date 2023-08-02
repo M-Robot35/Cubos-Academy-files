@@ -1,0 +1,33 @@
+hackerrank exercicio 
+// ===========================================================
+// Pontos no campeonato
+// ===========================================================
+
+function solucao(resultados) {
+	//seu codigo aqui
+    let pontuacao = 0
+    for(let ponto of resultados){
+        if(ponto == "V"){
+         pontuacao+=3  
+        }else if(ponto == "E"){
+          pontuacao+=1  
+         }
+    }
+    console.log(pontuacao)
+}
+
+function processData(input) {
+    const resultados = JSON.parse(input);
+    solucao(resultados);
+} 
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
